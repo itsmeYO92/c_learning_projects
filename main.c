@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <ctype.h>
+#include <string.h>
 
 int main() {
 
@@ -14,33 +16,45 @@ start:	printf("\nyour choice:  ");
 	}
 
 	printf("the game started");
-question1:
-	printf("\nFirst question: WHAT IS THE CAPITAL OF FRANCE\n");
-	printf("1. Madrid\n2. Paris\n3. Rabat\n");
-	printf("Please provide your answer:  ");
-	scanf("%d",&c);
-	if(c==2){printf("\nGOOD ANSWER\n");score=score+3;}
-	else if(c==1||c==3){
-	printf("\n wrong answer\n");score--;}else{printf("wrong choice please entre 1 2 or 3\n");goto question1;}
+
+char questions[10][150]={"What is the name of the main antagonist in the Shakespeare play Othello?",
+"What element is denoted by the chemical symbol Sn in the periodic table?",
+"How many of Henry VIII's wives were called Catherine?",
+"What was the most popular girls name in the UK in 2021?",
+"What is the name of the 1976 film about the Watergate scandal, starring Robert Redford and Dustin Hoffman?",
+"Which comedian was the second permanent host of Never Mind the Buzzcocks after Mark Lamarr?",
+"Which popular video game franchise has released games with the subtitles World At War and Black Ops?",
+"In what US State is the city Nashville?",
+"Which rock band was founded by Trent Reznor in 1988?"};
+
+char answers[10][30]={"iago","tin","3","olivia","all the president's man","simon amstell","call of duty","tennessee","nine inch nails"};
+char ans[30];
+char lower[30];
+for(int i=0;i<9;i++){
+	printf("\nYOUR SCORE: %d pts\n",score);
+	printf("\n%s\n",questions[i]);
+	printf("YOUR ANSWER:  ");
+	gets(ans);
+	for(int j=0;ans[j];j++){
+	lower[j]=tolower(ans[j]);
+	}
+	if(strcmp(lower,answers[i])==0){
+	printf("\nGOOD ANSWER +3 pts\n");
+	score+=3;
+	
+	}else{
+	printf("\nWRONG ANSWER -1 pts  (answer is: %s)\n",answers[i]);
+	score--;
+	
+	}
 
 
-question2:
-        printf("\nYOUR SCORE IS:%d\nIn what US State is the city Nashville?\n",score);
-        printf("1. California\n2. Ohio\n3. Tennesse\n");
-        printf("Please provide your answer:  ");
-        scanf("%d",&c);
-        if(c==3){printf("\nGOOD ANSWER\n");score=score+3;}
-        else if(c==1||c==2){
-        printf("\n wrong answer\n");score--;}else{printf("wrong choice please entre 1 2 or 3\n");goto question2;}
 
-question3:
-        printf("\nYOUR SCORE IS:%d\nWhat is the capital of New Zealand?\n",score);
-        printf("1. Wellington\n2. Auckland\n3. Dunedin\n");
-        printf("Please provide your answer:  ");
-        scanf("%d",&c);
-        if(c==1){printf("\nGOOD ANSWER\n");score=score+3;}
-        else if(c==3||c==2){
-        printf("\n wrong answer\n");score--;}else{printf("wrong choice please entre 1 2 or 3\n");goto question3;}
+
+
+
+}
+
         return 0;
 
 }
