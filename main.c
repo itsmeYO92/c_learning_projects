@@ -8,7 +8,7 @@ int main() {
 	int menu,c,score=0;
 	printf("to quite; please enter 0\nto start please enter 1");
 start:	printf("\nyour choice:  ");
-	scanf("%d",&menu); //still needs some input validation it breaks when it gets something differnt than an int
+	scanf("%d",&menu);fgetc(stdin); //still needs some input validation it breaks when it gets something differnt than an inrt
 	
 	if(menu==0){return 0;}else if(menu==1){printf("the game will start now");}else{
 	printf("wrong answer please entre 1 or 0");
@@ -17,7 +17,7 @@ start:	printf("\nyour choice:  ");
 
 	printf("the game started");
 
-char questions[10][150]={"What is the name of the main antagonist in the Shakespeare play Othello?",
+char questions[10][150]={"Waht is the name of the main antagonist in the Shakespeare play Othello?",
 "What element is denoted by the chemical symbol Sn in the periodic table?",
 "How many of Henry VIII's wives were called Catherine?",
 "What was the most popular girls name in the UK in 2021?",
@@ -34,7 +34,7 @@ for(int i=0;i<9;i++){
 	printf("\nYOUR SCORE: %d pts\n",score);
 	printf("\n%s\n",questions[i]);
 	printf("YOUR ANSWER:  ");
-	gets(ans);
+	fgets(ans,30,stdin);
 	for(int j=0;ans[j];j++){
 	lower[j]=tolower(ans[j]);
 	}
