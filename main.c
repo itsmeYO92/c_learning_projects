@@ -55,8 +55,8 @@ for(int i=0;i<9;i++){
 
 }	
 	char choice;
-	printf("THE GAME HAS ENDED !!  YOUR SCORE: %d",score);
-	printf("\n	Type R/r to restart");
+	printf("\n\n\n##### THE GAME HAS ENDED !!  YOUR SCORE: %d #####",score);
+	printf("\n	Type R/r to restart:  ");
 	scanf("%c",&choice); fgetc(stdin);
 	if(choice=='R' || choice =='r'){
 		goto start;
