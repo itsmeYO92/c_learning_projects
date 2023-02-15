@@ -6,8 +6,8 @@ int main() {
 
 	printf("welcome to my quiz game\n");
 	int menu,c,score=0;
-	printf("to quite; please enter 0\nto start please enter 1");
-start:	printf("\nyour choice:  ");
+start:	printf("to quite; please enter 0\nto start please enter 1");
+	printf("\nyour choice:  ");
 	scanf("%d",&menu);fgetc(stdin); //still needs some input validation it breaks when it gets something differnt than an inrt
 	
 	if(menu==0){return 0;}else if(menu==1){printf("the game will start now");}else{
@@ -53,7 +53,14 @@ for(int i=0;i<9;i++){
 
 
 
-}
+}	
+	char choice;
+	printf("THE GAME HAS ENDED !!  YOUR SCORE: %d",score);
+	printf("\n	Type R/r to restart");
+	scanf("%c",&choice); fgetc(stdin);
+	if(choice=='R' || choice =='r'){
+		goto start;
+	}
 
         return 0;
 
