@@ -12,10 +12,12 @@
  * Return: 0 if successful
 */
 
+void print_ascii_art(void);
+
 int main(void) 
 {
 	system("clear");
-
+	print_ascii_art();
 	printf("welcome to my quiz game\n");
 	int menu, c, score = 0;
 start:	printf("to quite; please enter 0\nto start please enter 1");
@@ -37,6 +39,7 @@ start:	printf("to quite; please enter 0\nto start please enter 1");
 	}
 
 	system("clear");
+	print_ascii_art();
 
 	printf("the game started");
 
@@ -81,7 +84,7 @@ start:	printf("to quite; please enter 0\nto start please enter 1");
 
 
 	system("clear");
-
+	print_ascii_art();
 
 
 	}
@@ -100,3 +103,20 @@ start:	printf("to quite; please enter 0\nto start please enter 1");
         return 0;
 
 }
+
+
+void print_ascii_art(void)
+{
+
+	FILE *art_file;
+
+	art_file = fopen("art.txt","r");
+
+	char line[150];
+
+	while (fgets (line, sizeof(line), art_file))
+	{
+	
+	printf("%s",line);
+	}
+}	
