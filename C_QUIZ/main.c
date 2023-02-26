@@ -93,6 +93,7 @@ start:	printf("to quite; please enter 0\nto start please enter 1");
 	scanf("%c", &choice); fgetc(stdin);
 	if (choice == 'R' || choice == 'r')
 	{
+		score = 0;
 		goto start;
 	}
 
