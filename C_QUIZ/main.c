@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <ctype.h>
+#include <stdlib.h>
 #include <string.h>
 /**
  * main -Entry point
@@ -13,6 +14,7 @@
 
 int main(void) 
 {
+	system("clear");
 
 	printf("welcome to my quiz game\n");
 	int menu, c, score = 0;
@@ -33,6 +35,8 @@ start:	printf("to quite; please enter 0\nto start please enter 1");
 		printf("wrong answer please entre 1 or 0");
 		goto start; 
 	}
+
+	system("clear");
 
 	printf("the game started");
 
@@ -76,7 +80,7 @@ start:	printf("to quite; please enter 0\nto start please enter 1");
 		}
 
 
-
+	system("clear");
 
 
 
